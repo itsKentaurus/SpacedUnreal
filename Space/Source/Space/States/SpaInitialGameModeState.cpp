@@ -1,1 +1,6 @@
-﻿#include "SpaInitialGameModeState.h"
+﻿
+#include "SpaInitialGameModeState.h"
+
+SpaInitialGameModeState::SpaInitialGameModeState()
+{
+}

@@ -29,11 +29,6 @@
       "AdditionalDependencies": [
         "DeveloperSettings"
       ]
-    },
-    {
-      "Name": "hsm",
-      "Type": "Runtime",
-      "LoadingPhase": "Default"
     }
   ],
   "Plugins": [

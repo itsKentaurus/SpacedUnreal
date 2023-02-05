@@ -3,6 +3,7 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "HSM.h"
 #include "GameFramework/GameModeBase.h"
 #include "SpaceGameMode.generated.h"
 
@@ -13,6 +14,13 @@ class ASpaceGameMode : public AGameModeBase
 
 public:
 	ASpaceGameMode();
+	virtual void InitGame(const FString& MapName, const FString& Options, FString& ErrorMessage) override;
+
+protected:
+	virtual void Tick(float DeltaSeconds) override;
+
+private:
+	hsm::StateMachine StateMachine;
 };
 
 
