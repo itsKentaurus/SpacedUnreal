@@ -22,6 +22,7 @@ public class Space : ModuleRules
             "SpaceGameplay",
             "SpaceShared",
             "SpaceUI",
+            "hsm",
         });
     }
 }
