@@ -19,7 +19,8 @@ public class SpaceShared : ModuleRules
                 "CoreUObject",
                 "Engine",
                 "Slate",
-                "SlateCore"
+                "SlateCore",
+                "GameplayTags"
             }
         );
     }

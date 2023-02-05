@@ -20,7 +20,8 @@ public class SpaceGameplay : ModuleRules
                 "CoreUObject",
                 "Engine",
                 "Slate",
-                "SlateCore"
+                "SlateCore",
+                "GameplayTags",
             }
         );
     }

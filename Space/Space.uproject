@@ -17,12 +17,18 @@
 		{
 			"Name": "SpaceUI",
 			"Type": "Runtime",
-			"LoadingPhase": "Default"
+			"LoadingPhase": "Default",
+			"AdditionalDependencies": [
+				"UMG"
+			]
 		},
 		{
 			"Name": "SpaceShared",
 			"Type": "Runtime",
-			"LoadingPhase": "Default"
+			"LoadingPhase": "Default",
+			"AdditionalDependencies": [
+				"DeveloperSettings"
+			]
 		}
 	],
 	"Plugins": [

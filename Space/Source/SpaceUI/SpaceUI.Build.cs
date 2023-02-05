@@ -20,7 +20,8 @@ public class SpaceUI : ModuleRules
                 "CoreUObject",
                 "Engine",
                 "Slate",
-                "SlateCore"
+                "SlateCore",
+                "GameplayTags",
             }
         );
     }
