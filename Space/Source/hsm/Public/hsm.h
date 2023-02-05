@@ -199,22 +199,23 @@ struct StateTypeId
 template <typename StateType>
 const StateTypeId& GetStateType()
 {
-	static StateTypeId stateTypeId = internal::GetTypeName<StateType>();
+	
+	static StateTypeId stateTypeId = typeid(StateType).name();
 	return stateTypeId;
 }
 
 template <typename StateType>
 const char* GetStateName()
 {
-	return GetStateType().mStateName;
+	return GetStateType<StateType>().mStateName;
 }
 
 } // namespace hsm
 
 // Must use this macro in every State to add RTTI support.
 #define DEFINE_HSM_STATE(__StateName__) \
-	static hsm::StateTypeId GetStaticStateType() { static hsm::StateTypeIdStorage sStateTypeId(HSM_TEXT(#__StateName__)); return sStateTypeId; } \
-	virtual hsm::StateTypeId DoGetStateType() const { return GetStaticStateType(); } \
+	static hsm::StateTypeId GetStateType() { static hsm::StateTypeId sStateTypeId(HSM_TEXT(#__StateName__)); return sStateTypeId; } \
+	virtual hsm::StateTypeId DoGetStateType() const { return GetStateType(); } \
 	virtual const hsm_char* DoGetStateDebugName() const { return HSM_TEXT(#__StateName__); }
 
 #endif // !HSM_USE_CPP_RTTI
@@ -526,7 +527,7 @@ struct State
 	}
 
 	// RTTI interface
-	StateTypeId GetStateType() const { return mStateTypeId; }
+	virtual StateTypeId GetStateType() const { return mStateTypeId; }
 	const hsm_char* GetStateDebugName() const { return mStateDebugName; }
 
 	// Accessors
